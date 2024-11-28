@@ -118,7 +118,7 @@ Public Class Form1
         Dim gender As String = gender_cbox.Text
 
         '2. Creat insert sql query
-        Dim query As String = "UPDATE members SET firstName = @firstName, lastName = @lastName, gender = @gender WHERE id = @id"
+        Dim query As String = "UPDATE members SET firstName = @firstName, lastName = @lastName, gender = @gender WHERE memberId = @id"
 
         '3. Create connection to SQL Server
         Using con As SqlConnection = New SqlConnection("Data Source=STC-PSONB06;Initial Catalog=memberDb;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False")
@@ -160,7 +160,7 @@ Public Class Form1
         Dim id As String = idValue_lbl.Text
 
         '1. Creat insert sql query
-        Dim query As String = "DELETE FROM members WHERE id = @id"
+        Dim query As String = "DELETE FROM members WHERE memberId = @id"
 
         '2. Create connection to SQL Server
         Using con As SqlConnection = New SqlConnection("Data Source=STC-PSONB06;Initial Catalog=memberDb;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False")
